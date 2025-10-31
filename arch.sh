@@ -3,6 +3,7 @@ set -euo pipefail
 
 echo "==> WELCOME! Now we will customize Arch-based Terminal"
 echo "==> Created by Phunt_Vieg_"
+echo "==> Edited by GUXXdx"
 
 cd ~
 
@@ -40,7 +41,7 @@ pacman_packages=(
 )
 aur_packages=(
     # System monitoring and fun terminal visuals
-    cbonsai pipes.sh oh-my-posh
+    cbonsai pipes.sh oh-my-posh 
 
     # CTF tools
     pwninit
@@ -65,7 +66,7 @@ git clone --depth=1 https://github.com/tmux-plugins/tpm ~/dotfiles/.tmux/plugins
 
 echo "==> Stow"
 cd ~/dotfiles
-./.config/viegphunt/backup_config.sh
+./.config/guxxdx/backup_config.sh
 stow -t ~ .
 cd ~
 
