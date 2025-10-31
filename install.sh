@@ -4,7 +4,7 @@ set -euo pipefail
 clear
 
 echo "==> WELCOME! Now we will install and setup Hyprland on an Arch-based system"
-echo "==> Create by Phunt_Vieg_"
+echo "==> Create by Phunt_Vieg_, Edited by GUXXdx"
 
 cd ~
 
