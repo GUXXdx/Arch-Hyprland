@@ -44,7 +44,7 @@ chmod +x install.sh
 ./install.sh
 ```
 
-> [!Notes]
+> [!NOTE]
 > this script have a hard time if you fail once a,d start lunching it again.
 >A fix is on the way, let me cook
 
