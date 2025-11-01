@@ -1,6 +1,6 @@
 # Sources
 
->[!Notes]
+> [!NOTE]
 > I can't reallly source all the image that i got here
 > If you are the owner of one of these images, please contact me
 
