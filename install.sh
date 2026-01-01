@@ -20,8 +20,8 @@ clear
 echo -e "
  ${PINK}\e[1mWELCOME!${PINK} Now we will install and setup Hyprland on an Arch-based system
                        Created by \e[1;4mPhunt_Vieg_\e[0m
-                          ${PINK}Edited by \e[1;4mGUXXdx$
-{WHITE}"
+                          ${PINK}Edited by \e[1;4mGUXXdx
+${WHITE}"
 
 
 # Warning message

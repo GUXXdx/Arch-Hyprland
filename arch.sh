@@ -1,9 +1,21 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "==> WELCOME! Now we will customize Arch-based Terminal"
-echo "==> Created by Phunt_Vieg_"
-echo "==> Edited by GUXXdx"
+
+# Color variables
+PINK="\e[35m"
+WHITE="\e[0m"
+YELLOW="\e[33m"
+GREEN="\e[32m"
+BLUE="\e[34m"
+
+
+# Welcome message
+echo -e "
+ ${PINK}\e[1mWELCOME!${PINK} Now we will install and setup Hyprland on an Arch-based system
+                       Created by \e[1;4mPhunt_Vieg_\e[0m
+                          ${PINK}Edited by \e[1;4mGUXXdx$
+{WHITE}"
 
 cd ~
 
