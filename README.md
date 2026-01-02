@@ -52,7 +52,7 @@ chmod +x install.sh
 This repo contains all my dotfiles: [`Dotfiles`](https://github.com/GUXXdx/Dotfiles).
 
 ## Wallpapers Repo
-You can find my wallpaper collection in: [`Wallpaper-Collection`](Wallpapers/wallpapers.md).
+You can find my wallpaper collection in: [`Wallpaper-Collection`](wallpapers/wallpapers.md).
 
 
 ## Feedback
