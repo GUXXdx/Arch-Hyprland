@@ -22,7 +22,7 @@
 
 ### Screenshots
 
-[Work in progress]
+<img width="1899" height="1054" alt="image" src="https://github.com/user-attachments/assets/497edf5c-7d1b-4720-96a7-209b07ffbbc6" />
 
 ## Notes
 > [!IMPORTANT]
