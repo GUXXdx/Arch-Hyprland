@@ -8,19 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # Step 1: Build the Docker image
-      - name: Build Docker image
-        run: docker build -t guxxdx/archguxx:1.0 .
 
-      # Step 2: Run container in background
+      # Step 1 Run container in background
       - name: Start container
         run: docker run --name Arch-btw -d -v ${{ github.workspace }}:/workspace guxxdx/archguxx:1.0
 
-      # Step 3: Make the script executable
+      # Step 2: Make the script executable
       - name: Make install.sh executable
         run: docker exec Arch-btw chmod +x /workspace/install.sh
 
-      # Step 4: Run the install script
+      # Step 3: Run the install script
       - name: Run install.sh
         run: docker exec Arch-btw /workspace/install.sh -a
 # Test-arch:
