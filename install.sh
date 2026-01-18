@@ -3,6 +3,9 @@ set -euo pipefail
 
 # Variables
 #----------------------------
+if [[ $1 == --auto ||  $1 == -a ]]; then
+    auto=1
+fi
 
 # time variable
 start=$(date +%s)
@@ -25,30 +28,32 @@ ${WHITE}"
 
 
 # Warning message
-echo -e "${PINK}
- *********************************************************************
- *                         ⚠️  \e[1;4mWARNING\e[0m${PINK}:                              *
- *               This script will modify your system!                *
- *         It will install Hyprland and several dependencies.        *
- *      Make sure you know what you are doing before continuing.     *
- *********************************************************************
-\n
-"
+if [[ $test -ne 0 ]]; then
+    echo -e "${PINK}
+    *********************************************************************
+    *                         ⚠️  \e[1;4mWARNING\e[0m${PINK}:                              *
+    *               This script will modify your system!                *
+    *         It will install Hyprland and several dependencies.        *
+    *      Make sure you know what you are doing before continuing.     *
+    *********************************************************************
+    \n
+    "
 
-# Asking if the user want to proceed
-echo -e "${YELLOW} Do you still want to continue with Hyprland installation using this script? [y/N]: \n"
-read -r confirm
-case "$confirm" in
-    [yY][eE][sS]|[yY])
-        echo -e "\n${GREEN}[OK]${PINK} ==> Continuing with installation..."
-        ;;
-    *)
-        echo -e "${BLUE}[NOTE]${PINK} ==> You 🫵 chose ${YELLOW}NOT${PINK} to proceed.. Exiting..."
-        echo
-        exit 1
-        ;;
-esac
 
+    # Asking if the user want to proceed
+    echo -e "${YELLOW} Do you still want to continue with Hyprland installation using this script? [y/N]: \n"
+    read -r confirm
+    case "$confirm" in
+        [yY][eE][sS]|[yY])
+            echo -e "\n${GREEN}[OK]${PINK} ==> Continuing with installation..."
+            ;;
+        *)
+            echo -e "${BLUE}[NOTE]${PINK} ==> You 🫵 chose ${YELLOW}NOT${PINK} to proceed.. Exiting..."
+            echo
+            exit 1
+            ;;
+    esac
+fi
 
 # Start of the install procedure
 cd ~
