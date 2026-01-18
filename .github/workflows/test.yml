@@ -7,13 +7,26 @@ jobs:
     name: Test install
     runs-on: ubuntu-latest
     steps:
-      - run: docker run --name Arch-btw -d -v ${{ github.workspace }}:/workspace guxxdx/archguxx:1.0
-      - run: docker exec Arch-btw chmod +x /workspace/install.sh
-      - run: docker exec Arch-btw  /workspace/install.sh -a
-  Test-arch:
-    runs-on: ubuntu-latest
-    name: test 
-    steps:
-      - run: docker run --name Arch-btw -d -v ${{ github.workspace }}:/workspace archlinux:latest sleep infinity
-      - run: docker exec Arch-btw  chmod +x /workspace/arch.sh
-      - run: docker exec Arch-btw  /workspace/arch.sh
+
+      # Step 1: Build the Docker image
+      - name: Build Docker image
+        run: docker build -t guxxdx/archguxx:1.0 .
+
+      # Step 2: Run container in background
+      - name: Start container
+        run: docker run --name Arch-btw -d -v ${{ github.workspace }}:/workspace guxxdx/archguxx:1.0
+
+      # Step 3: Make the script executable
+      - name: Make install.sh executable
+        run: docker exec Arch-btw chmod +x /workspace/install.sh
+
+      # Step 4: Run the install script
+      - name: Run install.sh
+        run: docker exec Arch-btw /workspace/install.sh -a
+# Test-arch:
+#   runs-on: ubuntu-latest
+#   name: test 
+#   steps:
+#     - run: docker run --name Arch-btw -d -v ${{ github.workspace }}:/workspace archlinux:latest sleep infinity
+#     - run: docker exec Arch-btw  chmod +x /workspace/arch.sh
+#     - run: docker exec Arch-btw  /workspace/arch.sh
