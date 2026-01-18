@@ -9,12 +9,12 @@ jobs:
     steps:
       - run: docker run --name Arch-btw -v ${{ github.workspace }}:/workspace archlinux:latest
       - run: docker ps 
-      - run: docker exec -it chmod +x /workspace/install.sh
-      - run: docker exec -it /workspace/install.sh
+      - run: docker exec Arch-btw -it chmod +x /workspace/install.sh
+      - run: docker exec Arch-btw -it /workspace/install.sh
   Test-arch:
     runs-on: ubuntu-latest
     name: test 
     steps:
       - run: docker run --name Arch-btw -v ${{ github.workspace }}:/workspace archlinux:latest
-      - run: docker exec -it chmod +x /workspace/arch.sh
-      - run: docker exec -it /workspace/arch.sh
+      - run: docker exec Arch-btw -it chmod +x /workspace/arch.sh
+      - run: docker exec Arch-btw -it /workspace/arch.sh
