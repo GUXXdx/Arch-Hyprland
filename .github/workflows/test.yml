@@ -1,21 +1,20 @@
-name: test
+name: Script-tests
 
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  Setup:
-    name: Setup docker 
+  Test-install:
+    name: Test install
     runs-on: ubuntu-latest
     steps:
-      - run: whoami
-      - run : sudo apt install -y
-      - run : ls 
-      - run : docker run --name Arch-btw -v ./:~/ archlinux:latest
-      - run : docker ps 
-      - run : docker exec -it chmod +x install.sh
-      - run : docker exec -it ./install.sh
-  Dockercheck:
-    runs-on: ubuntu-latest
-    name: test docker
-    steps:
+      - run: docker run --name Arch-btw -v -v ${{ github.workspace }}:/workspace archlinux:latest
       - run: docker ps 
+      - run: docker exec -it chmod +x }:/workspace/install.sh
+      - run: docker exec -it /workspace/install.sh
+  Test-arch:
+    runs-on: ubuntu-latest
+    name: test 
+    steps:
+      - run: docker run --name Arch-btw -v -v ${{ github.workspace }}:/workspace archlinux:latest
+      - run: docker exec -it chmod +x }:/workspace/arch.sh
+      - run: docker exec -it /workspace/arch.sh
