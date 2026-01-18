@@ -7,7 +7,7 @@ jobs:
     name: Test install
     runs-on: ubuntu-latest
     steps:
-      - run: docker run --name Arch-btw -v ${{ github.workspace }}:/workspace archlinux:latest
+      - run: docker run --name Arch-btw -v ${{ github.workspace }}:/workspace archlinux:latest sleep infinity
       - run: docker ps 
       - run: docker exec Arch-btw -it chmod +x /workspace/install.sh
       - run: docker exec Arch-btw -it /workspace/install.sh
@@ -15,6 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     name: test 
     steps:
-      - run: docker run --name Arch-btw -v ${{ github.workspace }}:/workspace archlinux:latest
+      - run: docker run --name Arch-btw -v ${{ github.workspace }}:/workspace archlinux:latest sleep infinity
       - run: docker exec Arch-btw -it chmod +x /workspace/arch.sh
       - run: docker exec Arch-btw -it /workspace/arch.sh
